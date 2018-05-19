@@ -94,10 +94,11 @@ int transient()
 {
     int i;
 
-    for (i = 0; i < values; i++) {
+    for (i = 0; i < values; i++)
         enqueue(create_node(rand() % 100));
+        
+    for (i = 0; i < values; i++)
         free(dequeue());
-    }
 
     return 0;
 }
