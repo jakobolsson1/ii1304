@@ -94,13 +94,11 @@ int transient()
 {
     int i;
 
-    for (i = 0; i < values; i++)
-        enqueue(create_node(rand() % 100));
-
-    for (i = 0; i < enqueues; i++) {
+    for (i = 0; i < values; i++) {
         enqueue(create_node(rand() % 100));
         free(dequeue());
     }
+
     return 0;
 }
 
@@ -108,10 +106,14 @@ int steady()
 {
     int i;
 
-    for (i = 0; i < values; i++) {
+    for (i = 0; i < values; i++)
+        enqueue(create_node(rand() % 100));
+
+    for (i = 0; i < enqueues; i++) {
         enqueue(create_node(rand() % 100));
         free(dequeue());
     }
+
     return 0;
 }
 
